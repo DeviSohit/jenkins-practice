@@ -6,6 +6,7 @@ pipeline {
                 echo 'Building..' 
                 sh '''
                     ls -ltr
+                    echo 'hello from github webhook'
                 '''
             }
         }
