@@ -4,11 +4,6 @@ pipeline {
         stage('Build') { 
             steps {
                 echo 'Building..' 
-                sh '''
-                    ls -ltr
-                    pwd
-                    echo 'hello from github webhook'
-                '''
             }
         }
         stage('Test') { 
