@@ -61,6 +61,19 @@ pipeline {
                 echo "Password: ${params.PASSWORD}"
             }
         }
+        stage('Input') {
+            input {
+                message "Should we continue?" //popup msg
+                ok "Yes, we should." //take approval ok
+                submitter "alice,bob"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr.Jenkins', description: 'who should I say hello to?')
+                }
+            }
+            steps {
+                echo "Hello ${params.PERSON}, nice to meet you"
+            }
+        }
     }
 
     post { 
