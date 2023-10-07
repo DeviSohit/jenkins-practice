@@ -74,6 +74,14 @@ pipeline {
                 echo "Hello ${params.PERSON}, nice to meet you"
             }
         }
+        stage('PROD Deploy') {
+            when {
+                environment name: 'USER', value: 'devi'
+            }
+            steps {
+                echo "Deploy to PROD"
+            }
+        }
     }
 
     post { 
