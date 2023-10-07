@@ -3,9 +3,9 @@ pipeline {
     options{
         timeout(time: 1, unit: 'HOURS')
     }
-    triggers{
-        cron('* * * * *')
-    }
+    // triggers{
+    //     cron('* * * * *') //this job will trigger for every one minute
+    // }
     environment {
         USER = 'devi'
     }
